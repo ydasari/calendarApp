@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="calendarApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Calendar App</title>
+		<!-- adding all neccessary css files -->
+		<link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+		<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+
+		<!-- Loading all the dependent javascript files -->
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+		<script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+		<script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+		<!-- Loading main angular application -->
+		<script type="text/javascript" src="calendarApp.js"></script>
+		
+	</head>
+	<body ng-controller="calendarCtrl">
+		<!-- calendar component============================== -->
+		<div ui-calendar="uiConfig.calendar" ng-model="eventSources">
+		</div>
+		<!-- Bootstrap modal for adding more events -->
+		<div id="addEventModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Add new event</h4>
+			      </div>
+			      <div class="modal-body">
+			        <div class="row">
+			        	<!-- container for event title -->
+			        	<div class="col-md-5">
+			        		<div class="form-group">
+			        			<label class="control-label" for="title">Event title:</label>
+			        			<input type="text" name="title" id="title" class="form-control">
+			        		</div>
+			        	</div>
+			        	<!-- container for event start date and time -->
+				        <div class='col-md-5'>
+					        <div class="form-group">
+					        	<label class="control-label" for="datetimepicker1">Event start:</label>
+					            <div class='input-group date' id='datetimepicker1'>
+					                <input type='text' class="form-control" ng-model="startEvent" />
+					                <span class="input-group-addon">
+					                    <span class="glyphicon glyphicon-calendar"></span>
+					                </span>
+					            </div>
+					        </div>
+					    </div>
+					    <!-- container for event end date and time -->
+					    <div class='col-md-5'>
+					        <div class="form-group">
+					        	<label class="control-label" for="datetimepicker2">Event end:</label>
+					            <div class='input-group date' id='datetimepicker2'>
+					                <input type='text' class="form-control" />
+					                <span class="input-group-addon">
+					                    <span class="glyphicon glyphicon-calendar"></span>
+					                </span>
+					            </div>
+					        </div>
+					    </div>
+			      	</div>
+			      	<!-- button for adding event -->
+			      	<button type="button" class="btn btn-lg btn-info" >Add</button>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			</div>
+		</div>
+	</body>
+</html>

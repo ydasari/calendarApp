@@ -1,0 +1,13 @@
+{
+  "name": "calendarApp",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-ui-calendar": "^1.0.2",
+    "bootstrap": "^3.3.7",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.45"
+  }
+}
